@@ -1,0 +1,242 @@
+<html><head><base href="https://www.infodeautos.com/" target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoAutos - Tu fuente confiable de información sobre autos</title>
+    <meta name="description" content="Encuentra información detallada sobre autos, compara modelos y descubre las últimas novedades en el mundo automotriz.">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #0099ff 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header .highlight, header .current a {
+            color: #0099ff;
+            font-weight: bold;
+        }
+        header a:hover {
+            color: #cccccc;
+            font-weight: bold;
+        }
+        #showcase {
+            min-height: 400px;
+            background: url('https://example.com/car-showcase.jpg') no-repeat center center/cover;
+            text-align: center;
+            color: #fff;
+        }
+        #showcase h1 {
+            margin-top: 100px;
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+        #showcase p {
+            font-size: 20px;
+        }
+        #youtube-section {
+            padding: 15px;
+            color: #fff;
+            background: #333;
+            text-align: center;
+        }
+        #youtube-section h2 {
+            margin-bottom: 15px;
+        }
+        .button_1 {
+            display: inline-block;
+            height: 38px;
+            background: #ff0000;
+            border: none;
+            padding: 0 20px;
+            color: #fff;
+            text-decoration: none;
+            line-height: 38px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .button_1:hover {
+            background: #cc0000;
+        }
+        #boxes {
+            margin-top: 20px;
+        }
+        #boxes .box {
+            float: left;
+            width: 30%;
+            padding: 10px;
+            text-align: center;
+        }
+        #boxes .box img {
+            width: 90px;
+        }
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #0099ff;
+            text-align: center;
+        }
+        @media(max-width: 768px) {
+            header #branding,
+            header nav,
+            header nav li,
+            #boxes .box {
+                float: none;
+                text-align: center;
+                width: 100%;
+            }
+            header {
+                padding-bottom: 20px;
+            }
+            #showcase h1 {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Info</span>Autos</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="index.html">Inicio</a></li>
+                    <li><a href="busqueda.html">Búsqueda</a></li>
+                    <li><a href="comparacion.html">Comparación</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Bienvenido a InfoAutos</h1>
+            <p>Tu fuente confiable de información sobre autos</p>
+        </div>
+    </section>
+
+    <section id="youtube-section">
+        <div class="container">
+            <h2>Visita nuestro canal de YouTube</h2>
+            <a href="https://www.youtube.com/@Roy17FF" target="_blank" class="button_1">Ver Canal de YouTube</a>
+        </div>
+    </section>
+
+    <section id="boxes">
+        <div class="container">
+            <div class="box">
+                <img src="https://example.com/icon-search.svg" alt="Icono de búsqueda">
+                <h3>Búsqueda de Autos</h3>
+                <p>Encuentra información detallada sobre cualquier marca y modelo de auto.</p>
+            </div>
+            <div class="box">
+                <img src="https://example.com/icon-compare.svg" alt="Icono de comparación">
+                <h3>Comparación de Modelos</h3>
+                <p>Compara diferentes modelos lado a lado para tomar la mejor decisión.</p>
+            </div>
+            <div class="box">
+                <img src="https://example.com/icon-gallery.svg" alt="Icono de galería">
+                <h3>Galería Visual</h3>
+                <p>Explora imágenes de alta calidad de los últimos modelos de autos.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>InfoAutos, Copyright &copy; 2023</p>
+    </footer>
+
+    <script>
+        // Funcionalidad de búsqueda
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchForm = document.createElement('form');
+            searchForm.id = 'searchForm';
+            searchForm.innerHTML = `
+                <input type="text" id="searchInput" placeholder="Ingrese marca y modelo">
+                <button type="submit" class="button_1">Buscar</button>
+            `;
+            document.querySelector('.container').appendChild(searchForm);
+
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const searchTerm = document.getElementById('searchInput').value;
+                // Aquí iría la lógica para buscar y mostrar resultados
+                alert(`Buscando información sobre: ${searchTerm}`);
+                // Redirigir a la página de resultados (a implementar)
+                window.location.href = `resultados.html?search=${encodeURIComponent(searchTerm)}`;
+            });
+        });
+
+        // Botones para compartir en redes sociales
+        function shareSocial(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('¡Mira esta información sobre autos!');
+            let shareUrl;
+
+            switch(platform) {
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+                    break;
+                case 'instagram':
+                    alert('Compartir directamente en Instagram no es posible. Puedes copiar el enlace y compartirlo manualmente.');
+                    return;
+            }
+
+            window.open(shareUrl, '_blank');
+        }
+
+        // Crear botones de compartir
+        const shareButtons = document.createElement('div');
+        shareButtons.innerHTML = `
+            <button onclick="shareSocial('facebook')">Compartir en Facebook</button>
+            <button onclick="shareSocial('twitter')">Compartir en Twitter</button>
+            <button onclick="shareSocial('instagram')">Compartir en Instagram</button>
+        `;
+        document.body.appendChild(shareButtons);
+    </script>
+</body>
+</html>
